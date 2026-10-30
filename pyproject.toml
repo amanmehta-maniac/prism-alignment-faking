@@ -1,0 +1,13 @@
+[project]
+name = "prism-probe"
+version = "0.1.0"
+description = "Controls for hidden-state probes of condition-dependent behavior (refusal control, label-free LOQO, split erasure, leakage theory, synthetic testbed)"
+requires-python = ">=3.10"
+dependencies = ["numpy", "scipy", "scikit-learn"]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["prism_probe"]

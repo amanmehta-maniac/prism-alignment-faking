@@ -1,0 +1,7 @@
+numpy>=1.26
+scipy>=1.11
+scikit-learn==1.9.1
+joblib
+sentence-transformers>=3.0   # text baselines (gate0_text.py)
+transformers>=4.51           # tokenizers for first-5-token baselines
+torch>=2.2

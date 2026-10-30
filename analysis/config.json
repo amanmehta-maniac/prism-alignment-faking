@@ -1,0 +1,33 @@
+{
+  "_comment": "PRISM release config. Paths are relative to the repo root.",
+  "models": {
+    "qwen": {
+      "name": "Qwen3-32B",
+      "hs_file": "data/hidden_states/qwen3-32b_layer48_gen5.npz",
+      "peak_layer": 48,
+      "tokenizer": "Qwen/Qwen3-32B"
+    },
+    "llama": {
+      "name": "Llama-3.1-8B",
+      "hs_file": "data/hidden_states/llama-3.1-8b_layer32_gen5.npz",
+      "peak_layer": 32,
+      "tokenizer": "unsloth/Meta-Llama-3.1-8B-Instruct"
+    }
+  },
+  "probe": {
+    "hidden_layer_sizes": [
+      512,
+      128
+    ],
+    "alpha": 0.01,
+    "max_iter": 300,
+    "validation_fraction": 0.15,
+    "n_seeds": 5
+  },
+  "mask_logreg_C": 0.1,
+  "text_logreg_C": 1.0,
+  "bootstrap_reps": 2000,
+  "bootstrap_seed": 20261027,
+  "disclaimer_regex": "important|note that|please note|disclaimer|safety|legal|responsib|ethic|caution|however|i (can't|cannot|won't)|consult|professional|be careful|ensure",
+  "n_jobs": 14
+}
