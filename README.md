@@ -1,4 +1,4 @@
-# PRISM: Five Checks Before Calling It Alignment Faking
+# PRISM: Stress-Testing Alignment-Faking Claims
 
 Code, data and controls for the paper.
 
