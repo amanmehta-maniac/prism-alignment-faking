@@ -1,4 +1,4 @@
-# PRISM: Probing the Hidden No Behind Prompted Compliance
+# PRISM: Five Checks Before Calling It Alignment Faking
 
 Code, data and controls for the paper.
 
