@@ -16,6 +16,7 @@ Many open-weight models comply more with borderline requests when the system pro
 | `prism_probe/` | pip-installable toolkit: label-free leave-one-query-out probing, query-bootstrap CIs, split-sample erasure (INLP, LEACE), the refusal-control report, theory, testbed |
 | `data/hidden_states/` | gen5 hidden states (mean of the first 5 generated tokens) at each model's peak layer, with condition, query, run, judge label, the response and its SHA-256 |
 | `data/generations/` | every judged generation: `factorial/` (6 prompt cells), `sweep/` (18 configurations), `steering/` (all steering arms and controls) |
+| `data/generations/scratchpad/` | judge labels for the private-scratchpad condition (Qwen3-32B, Llama-3.1-8B) |
 | `data/directions/` | per-layer steering directions (v_refusal, v_faking, v_cond_refuse) and the measured gaps |
 | `prompts/`, `queries/` | system prompts for every cell; the 50 borderline and 50 HarmBench queries |
 | `analysis/` | scripts that compute every number in the paper from `data/` |
@@ -48,6 +49,7 @@ rep["behavior_specific"]    # True only if the split-erasure delta CI excludes 0
 - **Judge.** Claude Opus 4.6 (`claude-opus-4-6`), temperature 0, answer truncated to 600 characters (`generation/run_prompts.py`). Compliance = COMPLY or PARTIAL.
 - **Statistics.** All CIs resample whole queries, because the runs of one query are not independent.
 - **Pre-registration.** Two rules changed after data were seen; both are listed in `prereg/gate2_steering_prereg.md`, with results under both versions.
+- **First-token collapse (check P).** The counts in the paper's PRISM table need first-token hidden states, which are not shipped; `generation/` re-extracts them with `hidden_state_pooling=first_gen_token`.
 - **Hidden states** are released only at the peak layer (48 for Qwen3-32B, 32 for Llama-3.1-8B), to keep the repository small. `generation/` re-extracts all layers.
 
 ## Licenses
